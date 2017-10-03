@@ -1,0 +1,29 @@
+.d3ndro-invisible {
+	display:none;
+}
+
+.d3ndro-collapsed path{
+	display:none;
+}
+
+.d3ndro-axis path {
+	stroke: black;
+	stroke-width: 2px;
+}
+
+.d3ndro-axis text{
+	dominant-baseline: middle;
+}
+
+.d3ndro-grid {
+	stroke: #404040;
+	stroke-width: 1px;
+	stroke-dasharray: 2,4
+}
+
+.d3ndro-grid-extremity {
+	stroke-dasharray: none;
+}
+.d3ndro-grid-mid {
+	stroke-dasharray: 16,8,8,8
+}
