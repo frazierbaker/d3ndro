@@ -9,6 +9,7 @@ export default {
 				id: -(i+1),
 				leaf: true,
 				color: options.itemColor(label, i),
+				textColor: options.textColor(label, i),
 				children: null,
 				parent: null,
 				distance: 0,

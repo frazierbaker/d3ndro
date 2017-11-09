@@ -2,16 +2,16 @@
 <head>
 	<script type="text/javascript" src="../dist/d3ndro.js"></script>
 	<script type="text/javascript">
-		$(
+		d3ndro.$(
 			() => {
-				d3.json("./output.json", (data) => {
+				d3ndro.d3.json("./output.json", (data) => {
 					let parsedJSON = d3ndro.parse.hclust(data);
 					d3ndro.graphics.renderDendrogram(parsedJSON);
-					$('#goto').on('click', () => {
+					d3ndro.$('#goto').on('click', () => {
 						let label = window.prompt('Label:');
 						d3ndro.interaction.scrollToLabel(label, parsedJSON);
 					});
-					$('#d3ndro').on('d3ndro:leaf:click', (e, d) => {
+					d3ndro.$('#d3ndro').on('d3ndro:leaf:click', (e, d) => {
 						window.alert(d.text);
 					});
 				});

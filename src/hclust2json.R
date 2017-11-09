@@ -22,16 +22,3 @@ hclust2json<- function (hc, output.file) {
   cluster<-cbind(hc$merge,hc$height)
   write(file=output.file, toJSON(list(merges=cluster,seq=hc$labels,order=hc$order,maxHeight=max(hc$height))))
 }
-
-colorCodes = c(
-    # hydrophobic
-    A=clYellow, C=clYellow, F=clYellow, G=clYellow, I=clYellow, L=clYellow, M=clYellow, P=clYellow,
-V=clYellow,
-    # amphipathic
-    H=clDarkYellow, W=clDarkYellow, Y=clDarkYellow,
-    # polar
-    N=clOrange, Q=clOrange, S=clOrange, T=clOrange,
-    # negatively charged
-    D=clRed, E=clRed,
-    # positively charged
-    R=clBrown, K=clBrown)

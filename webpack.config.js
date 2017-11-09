@@ -1,10 +1,11 @@
 module.exports = {
-    entry: './index.js',
+    entry: ['babel-polyfill', './index.js'],
     output: {
         filename: 'd3ndro.js',
         path: __dirname + '/dist',
         publicPath: __dirname +'/dist'
     },
+    devtool: "source-map",
     module: {
         rules: [
             {
@@ -13,7 +14,7 @@ module.exports = {
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        presets: ['minify']
+                        presets: ['env']
                     }
                 }
             },
