@@ -35,28 +35,30 @@ Once you have generated the JSON from R, you'll need to bring it into your web p
 ### Options<a name="Options"></a>
 The d3ndro package offers easy configuration options available through `d3ndro.options`.  To set, just edit the global `d3ndro.options` object before calling any other functions.  I recommend placing configuration options in the same script tag that you use to include d3ndro if you use a script tag to include d3ndro.
 
+Here is a table of all of the options for d3ndro.  To see default functiond definitions, look at src/options.js.
+
 |Option|Description|Default|
-|------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------|
-|d3ndro.options.<strong>backgroundColor</strong>|Function returning the background color for the d3ndrogram plot.  Function can take parsedJSON as a parameter.|function() { return "#FFF"; }|
-|d3ndro.options.<strong>collapsible</strong>|Determines whether internal tree nodes should collapse children into them when clicked (and uncollapse when clicked again).|undefined // (false)|
-|d3ndro.options.<strong>fontSize</strong>|Font size for leaf labels and axes text.|16|
-|d3ndro.options.<strong>highlightOnHover</strong>|Determines whether the path through the tree to the current leaf node should be highlighted when the mouse is over the leaf node|undefined // (false)|
-|d3ndro.options.<strong>internalNodeRadius</strong>|Size of the internal (non-leaf) nodes in the tree.|4|
-|d3ndro.options.<strong>itemColor</strong>|Function to determine color of leaf nodes.  Can take datum (d) as an argument. See the [demo](#Demo) for more deatils.|function() { return "#000"; }|
-|d3ndro.options.<strong>labelSpace</strong>|Space allocated for each leaf node/label.|function() { return this.fontSize/2 * Math.max(...Object.keys(parsedJSON.leafLabels).map((key)=>key.length)); }|
-|d3ndro.options.<strong>leafNodeRadius</strong>|Radius of the leaf node circles in pixels.|5|
-|d3ndro.options.<strong>mergeColor</strong>|Function returning the color of internal (non-leaf) nodes and connections in the tree. Function can take a merge node datum and index as arguments.|function() { return "#666"; }|
-|d3ndro.options.<strong>padding</strong>|Number of pixels to offset the dendrogram from the edge.|24|
-|d3ndro.options.<strong>spacing</strong>|Space to put between each leaf node/label.|24|
-|d3ndro.options.<strong>svgHeight</strong>|Height of the SVG element conaining the d3ndrogram.|400|
-|d3ndro.options.<strong>svgOverflow</strong>|Function returning the CSS Policy for when the d3ndrogram is larger than the width. See [this tutorial](https://www.w3schools.com/css/css_overflow.asp) for more information. Function can take parsedJSON as a parameter.|function() { return "scroll"; }|
-|d3ndro.options.<strong>textColor</strong>|Function returning the color for label text.  Function can take a leaf datum as an argument.|function(...args) { return this.itemColor.call(this, args); }|
+|------|-----------|-------|
+|d3ndro.options.<strong>backgroundColor</strong>|Function returning the background color for the d3ndrogram plot.  Function can take parsedJSON as a parameter.|See src/options.js|
+|d3ndro.options.<strong>collapsible</strong>|Determines whether internal tree nodes should collapse children into them when clicked (and uncollapse when clicked again).|`undefined // (false)`|
+|d3ndro.options.<strong>fontSize</strong>|Font size for leaf labels and axes text.|`16`|
+|d3ndro.options.<strong>highlightOnHover</strong>|Determines whether the path through the tree to the current leaf node should be highlighted when the mouse is over the leaf node|`undefined // (false)`|
+|d3ndro.options.<strong>internalNodeRadius</strong>|Size of the internal (non-leaf) nodes in the tree.|`4`|
+|d3ndro.options.<strong>itemColor</strong>|Function to determine color of leaf nodes.  Can take datum (d) as an argument. See the [demo](#Demo) for more deatils.|See src/options.js|
+|d3ndro.options.<strong>labelSpace</strong>|Function returning space allocated for each leaf node/label in pixels.  Function can take parsedJSON as a parameter.|See src/options.js|
+|d3ndro.options.<strong>leafNodeRadius</strong>|Radius of the leaf node circles in pixels.|`5`|
+|d3ndro.options.<strong>mergeColor</strong>|Function returning the color of internal (non-leaf) nodes and connections in the tree. Function can take a merge node datum and index as arguments.|See src/options.js|
+|d3ndro.options.<strong>padding</strong>|Number of pixels to offset the dendrogram from the edge.|`24`|
+|d3ndro.options.<strong>spacing</strong>|Space to put between each leaf node/label.|`24`|
+|d3ndro.options.<strong>svgHeight</strong>|Height of the SVG element conaining the d3ndrogram.|`400`|
+|d3ndro.options.<strong>svgOverflow</strong>|Function returning the CSS Policy for when the d3ndrogram is larger than the width. See [this tutorial](https://www.w3schools.com/css/css_overflow.asp) for more information. Function can take parsedJSON as a parameter.|See src/options.js|
+|d3ndro.options.<strong>textColor</strong>|Function returning the color for label text.  Function can take a leaf datum as an argument.|See src/options.js|
 
 ### Events<a name="Events"></a>
 The d3ndro package also exposes events using jQuery for convenience of integration.  See the [demo](#Demo) for an example on how to listen to events.  For your reference, a list of all exposed d3ndro events has been given below:
 
 |Event|Description|Location|
-|-----|-----------|--------|
+|-----|-----------|--------------|
 |`d3ndro:leaf:click`|When a leaf node is clicked.|src/interaction/collapse.js|
 |`d3ndro:collapse`|When an internal node is collapsed.|src/interaction/collapse.js|
 |`d3ndro:uncollapse`|When a collapsed internal node is expanded.|src/interaction/collapse.js|
