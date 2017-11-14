@@ -1,0 +1,25 @@
+<html>
+<head>
+	<script type="text/javascript" src="../dist/d3ndro.js"></script>
+	<script type="text/javascript">
+		d3ndro.$(
+			() => {
+				d3ndro.d3.json("./output.json", (data) => {
+					let parsedJSON = d3ndro.parse.hclust(data);
+					d3ndro.graphics.renderDendrogram(parsedJSON);
+					d3ndro.$('#goto').on('click', () => {
+						let label = window.prompt('Label:');
+						d3ndro.interaction.scrollToLabel(label, parsedJSON);
+					});
+					d3ndro.$('#d3ndro').on('d3ndro:leaf:click', (e, d) => {
+						window.alert(d.text);
+					});
+				});
+			}
+		);
+	</script>
+</head>
+<body>
+	<button id="goto">Goto!</button>
+</body>
+</html>

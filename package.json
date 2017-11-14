@@ -1,0 +1,50 @@
+{
+  "name": "d3ndro",
+  "version": "1.0.1",
+  "description": "Plots R HClust objects as dendrograms using D3",
+  "main": "dist/d3ndro.js",
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "d3": "^4.10.2",
+    "jquery": "^3.2.1",
+    "webpack": "^3.6.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-minify": "^0.2.0",
+    "babel-preset-env": "^1.6.0",
+    "css-loader": "^0.28.7",
+    "style-loader": "^0.18.2",
+    "webpack": "^3.6.0"
+  },
+  "scripts": {
+    "build": "webpack --progress --display-error-details"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frazierbaker/d3ndro.git"
+  },
+  "keywords": [
+    "d3",
+    "dendro",
+    "d3ndro",
+    "R",
+    "plot",
+    "hclust",
+    "hc",
+    "svg",
+    "javascript",
+    "web",
+    "data",
+    "visualization",
+    "clustering",
+    "hierarchical"
+  ],
+  "author": "Frazier Baker",
+  "license": "CC-BY 4.0",
+  "bugs": {
+    "url": "https://github.com/frazierbaker/d3ndro/issues"
+  },
+  "homepage": "https://github.com/frazierbaker/d3ndro#readme"
+}
