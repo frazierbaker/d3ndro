@@ -1,8 +1,8 @@
 {
   "name": "d3ndro",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Plots R HClust objects as dendrograms using D3",
-  "main": "index.js",
+  "main": "dist/d3ndro.js",
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "d3": "^4.10.2",
@@ -42,7 +42,7 @@
     "hierarchical"
   ],
   "author": "Frazier Baker",
-  "license": "UNLICENSED",
+  "license": "CC-BY 4.0",
   "bugs": {
     "url": "https://github.com/frazierbaker/d3ndro/issues"
   },

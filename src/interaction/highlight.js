@@ -53,6 +53,9 @@ export default {
 	},
 	
 	toggleGroupHighlight(id, parsedJSON, color="#7D7") {
+        // Fire event:
+		d3ndro.$('#d3ndro').trigger('d3ndro:groupHighlight', [id, parsedJSON, color]);
+		
 		let boolValue = !(d3ndro.d3.select(`#node${id}`).attr('data-d3ndro-group-highlighted') === "true")
 		d3ndro.d3.select(`#node${id}`)
 			.attr('data-d3ndro-group-highlighted', boolValue.toString())

@@ -42449,6 +42449,9 @@ exports.default = {
 	toggleGroupHighlight: function toggleGroupHighlight(id, parsedJSON) {
 		var color = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : "#7D7";
 
+		// Fire event:
+		d3ndro.$('#d3ndro').trigger('d3ndro:groupHighlight', [id, parsedJSON, color]);
+
 		var boolValue = !(d3ndro.d3.select('#node' + id).attr('data-d3ndro-group-highlighted') === "true");
 		d3ndro.d3.select('#node' + id).attr('data-d3ndro-group-highlighted', boolValue.toString());
 		parsedJSON.progeny(id).map(function (node) {
