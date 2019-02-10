@@ -1,6 +1,16 @@
 # d3ndro &nbsp; [![](https://data.jsdelivr.com/v1/package/npm/d3ndro/badge)](https://www.jsdelivr.com/package/npm/d3ndro) [![License: CC BY 4.0](https://licensebuttons.net/l/by/4.0/80x15.png)](https://creativecommons.org/licenses/by/4.0/)
 Interactive Hierarchical Clustering Vizualization Using D3 &amp; R.
 
+## Outline
+ - <a href="#features">Features</a>
+ - <a href="#installation">Installation</a>
+ - <a href="#demo">Demonstration</a>
+ - <a href="#usage">Usage</a>
+ - <a href="#config">Configuration</a>
+   - <a href="#options">Options</a>
+   - <a href="#events">Events</a>
+ - <a href="#citing">Citing</a>
+
 ## Features<a name="features"></a>
  - Collapsible d3ndrogram (see [Configuration](#Configuration))
  - Colored leaf nodes (per datum via callback)
@@ -8,7 +18,7 @@ Interactive Hierarchical Clustering Vizualization Using D3 &amp; R.
  - Quick Scrolling Navigation
  - Simple Integration with R's `hclust` function
 
-## Installation<a name="Installation"></a>
+## Installation<a name="installation"></a>
 Installing is as simple as including this in your html document:
 ```
 <script src="https://cdn.jsdelivr.net/npm/d3ndro@1.0.0/dist/d3ndro.js"></script>
@@ -19,20 +29,20 @@ Alternatively, if you use `npm`, you can install it using the following command:
 npm install d3ndro
 ```
 
-## Demonstration<a name="Demo"></a>
+## Demonstration<a name="demo"></a>
 You can see a demonstration of this library by cloning the repo and running any simple webserver in the root directory.  I personally prefer python's SimpleHTTPServer.
 
 ```python -m SimpleHTTPServer 8888```
 
 Then open `http://localhost:8888/demo` in your favorite web browser.
 
-## Usage<a name="Usage"></a>
+## Usage<a name="usage"></a>
 This visualization tool is meant to be used in conjunction with R's hclust function.  See `src/hclust2json.R` for an hclust2json function that exports d3ndro-compatible JSON.
 
 Once you have generated the JSON from R, you'll need to bring it into your web page using d3.  If you aren't using d3 elsewhere in your project, you can use `d3ndro.d3` to access d3's functions.  See the [demo](#Demo) source code for an example.
 
-## Configuration<a name="Configuration"></a>
-### Options<a name="Options"></a>
+## Configuration<a name="config"></a>
+### Options<a name="options"></a>
 The d3ndro package offers easy configuration options available through `d3ndro.options`.  To set, just edit the global `d3ndro.options` object before calling any other functions.  I recommend placing configuration options in the same script tag that you use to include d3ndro if you use a script tag to include d3ndro.
 
 Here is a table of all of the options for d3ndro.  To see default functiond definitions, look at src/options.js.
@@ -67,3 +77,8 @@ The d3ndro package also exposes events using jQuery for convenience of integrati
 |`d3ndro:unhighlight`|When highlighting is removed from a path to a leaf node.|src/interaction/highlight.js|
 |`d3ndro:groupHighlight`|When group highlighting is toggled on an internal (non-leaf) node.|src/interaction/highlight.js|
 |`d3ndro:scroll`|When automatic scrolling to a leaf node is invoked.|src/interaction/scroll.js|
+
+## Citing<a name="Citing"></a>
+If you find this useful, please consider citing the work which inspired it:
+
+<a href="https://doi.org/10.3390/data3010004">Baker, F.N. and Porollo, A., 2018. CoeViz: A Web-Based Integrative Platform for Interactive Visualization of Large Similarity and Distance Matrices. Data, 3(1), p.4.  https://doi.org/10.3390/data3010004</a>
